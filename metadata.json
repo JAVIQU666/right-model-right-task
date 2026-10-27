@@ -1,0 +1,58 @@
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "@id": "https://arxiv.org/abs/2610.35189",
+  "name": "Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI",
+  "headline": "Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI",
+  "author": [
+    {
+      "@type": "Person",
+      "name": "Jiawei Qu"
+    },
+    {
+      "@type": "Person",
+      "name": "Kai Hou"
+    },
+    {
+      "@type": "Person",
+      "name": "Hongjie Jia"
+    },
+    {
+      "@type": "Person",
+      "name": "Jinyue Yan"
+    }
+  ],
+  "abstract": "The carbon footprint of generative-AI inference depends not only on hardware efficiency and electricity supply, but also on whether the selected model is appropriate for the task. A frontier model may expend unnecessary computation on a routine request, whereas an under-capable model may increase energy use through failure, retries, extended reasoning and escalation. However, a standardized evaluation framework that accounts for task-specific capability requirements and the carbon emissions associated with successful task remains lacking. In this Perspective, we argue for a capability-constrained carbon labeling framework that shifts environmental assessment from carbon intensity per inference towards the expected carbon emissions per successfully completed task at the required capability level. Under this framework, models would first be assessed against task-specific capability requirements, and only models capable of meeting those requirements would be compared on their expected energy use and operational carbon emissions. By linking service quality to carbon cost, this approach could enable more informed matching of the right model to the right task, offering a demand-side pathway to reducing emissions associated with generative-AI token use. Realizing this vision will require standardized capability-based service assessments, comprehensive energy accounting and transparent carbon disclosures.",
+  "identifier": [
+    "arXiv:2610.35189",
+    {
+      "@type": "PropertyValue",
+      "propertyID": "DOI",
+      "value": "10.48550/arXiv.2610.35189",
+      "description": "Listed by arXiv; marked pending registration at verification on 2026-10-27"
+    }
+  ],
+  "datePublished": "2026-10-26",
+  "url": "https://arxiv.org/pdf/2610.35189",
+  "version": "1",
+  "inLanguage": "en",
+  "isAccessibleForFree": true,
+  "keywords": [
+    "generative AI",
+    "capability-constrained carbon labeling",
+    "AI inference emissions",
+    "carbon emissions per successful task",
+    "model-task matching",
+    "task-specific capability",
+    "LLM routing",
+    "inference energy accounting",
+    "deployment-specific carbon intensity",
+    "sustainable artificial intelligence"
+  ],
+  "creativeWorkStatus": "Preprint",
+  "encoding": {
+    "@type": "MediaObject",
+    "encodingFormat": "application/pdf",
+    "contentUrl": "https://arxiv.org/pdf/2610.35189"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "id": "2610.35189",
+  "type": "article",
+  "title": "Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI",
+  "author": [
+    {
+      "given": "Jiawei",
+      "family": "Qu"
+    },
+    {
+      "given": "Kai",
+      "family": "Hou"
+    },
+    {
+      "given": "Hongjie",
+      "family": "Jia"
+    },
+    {
+      "given": "Jinyue",
+      "family": "Yan"
+    }
+  ],
+  "issued": {
+    "date-parts": [
+      [
+        2026,
+        10,
+        26
+      ]
+    ]
+  },
+  "container-title": "arXiv",
+  "DOI": "10.48550/arXiv.2610.35189",
+  "URL": "https://arxiv.org/abs/2610.35189",
+  "note": "Preprint, version 1; arXiv-listed DOI pending registration at verification on 2026-10-27"
+}

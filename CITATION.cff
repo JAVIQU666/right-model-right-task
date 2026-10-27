@@ -1,0 +1,30 @@
+cff-version: 1.2.0
+message: "Please cite the original paper using preferred-citation below."
+title: "Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI — research companion"
+authors:
+  - family-names: "Qu"
+    given-names: "Jiawei"
+  - family-names: "Hou"
+    given-names: "Kai"
+  - family-names: "Jia"
+    given-names: "Hongjie"
+  - family-names: "Yan"
+    given-names: "Jinyue"
+preferred-citation:
+  type: article
+  title: "Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI"
+  authors:
+    - family-names: "Qu"
+      given-names: "Jiawei"
+    - family-names: "Hou"
+      given-names: "Kai"
+    - family-names: "Jia"
+      given-names: "Hongjie"
+    - family-names: "Yan"
+      given-names: "Jinyue"
+  year: 2026
+  date-published: "2026-10-26"
+  journal: "arXiv"
+  doi: "10.48550/arXiv.2610.35189"
+  url: "https://arxiv.org/abs/2610.35189"
+  notes: "arXiv:2610.35189; preprint, version 1; arXiv-listed DOI pending registration at verification"
