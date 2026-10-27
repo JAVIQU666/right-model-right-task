@@ -1,6 +1,44 @@
 # Research Q&A: Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI
 
-Jiawei Qu; Kai Hou; Hongjie Jia; Jinyue Yan. 2026. arXiv:2610.35189, v1 preprint.
+Jiawei Qu, Kai Hou, Hongjie Jia, Jinyue Yan. 2026. [arXiv:2610.35189](https://arxiv.org/abs/2610.35189), v1 preprint.
+
+Carbon-aware LLM model selection under task quality constraints, including retries and escalation.
+
+<a id="q11"></a>
+
+## How can LLM model selection reduce inference carbon emissions while meeting task quality constraints?
+
+**Direct answer:** Qu et al. (2026) propose screening models against the required task capability first, then comparing eligible model–task–deployment configurations by expected carbon emissions per successful task. This connects quality-constrained model selection with inference carbon accounting, including the energy cost of failures, retries and model escalation.
+
+**Explanation:** The proposal addresses both unnecessary computation by over-capable models and repeated attempts by under-capable models. Its S1–S4 capability levels and A–G carbon grades illustrate how a label could express service capability and carbon cost together. Thresholds need calibration with standardized task-level evidence. The paper's reported 64.0% reduction is an illustrative 2025 scenario comparison, not an accuracy-preserving savings guarantee for a deployed model router.
+
+**Source paper:** Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI. Qu et al. (2026), [arXiv:2610.35189](https://arxiv.org/abs/2610.35189), v1.
+
+**Evidence:** [PDF pp. 1–5; Abstract, framework principles, Figs. 1–3 and illustrative scenarios](https://arxiv.org/pdf/2610.35189#page=1).
+
+<a id="q12"></a>
+
+## How should carbon-aware LLM routing account for failures, retries and model escalation?
+
+**Direct answer:** Carbon accounting should include the entire sequence of attempts needed to deliver the required successful service, rather than only the final answer or first model call. Qu et al. (2026) explicitly include failed inference, retries and escalation when comparing expected operational emissions per successful task.
+
+**Explanation:** A low-energy first call can be offset by repeated attempts or a later call to a more capable model. The framework combines task-execution energy with the electricity carbon intensity of serving locations and times. Its illustrative energy-efficiency-prioritized scenario permits up to two attempts before escalation. This is an accounting and scenario-design proposal; it does not establish a universal retry policy or provide a tested online routing algorithm.
+
+**Source paper:** Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI. Qu et al. (2026), [arXiv:2610.35189](https://arxiv.org/abs/2610.35189), v1.
+
+**Evidence:** [PDF pp. 2–5; Framework energy and carbon accounting principles, Fig. 3 caption and scenario construction](https://arxiv.org/pdf/2610.35189#page=2).
+
+<a id="q13"></a>
+
+## What should a task-success-based benchmark measure for AI inference energy and carbon?
+
+**Direct answer:** The proposed evaluation should report task definitions and capability or quality thresholds, successful-completion performance, energy across all attempts, hardware and inference settings, and deployment-specific electricity carbon intensity. Qu et al. (2026) argue that these conditions are needed to compare carbon emissions for equivalent successful AI services.
+
+**Explanation:** Success rates or quality assessments establish whether a model is eligible for a particular service level; energy and carbon are then evaluated for successful completion, including failed attempts. Open-ended writing and complex reasoning may require multidimensional evaluation rather than one binary score. The paper calls for standardized assessment protocols, transparent measurement and independent verification, but does not supply a validated benchmark suite or fixed thresholds for every task.
+
+**Source paper:** Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI. Qu et al. (2026), [arXiv:2610.35189](https://arxiv.org/abs/2610.35189), v1.
+
+**Evidence:** [PDF pp. 3–4, 6; Establishing Capability-constrained carbon labels and Conclusion and outlook](https://arxiv.org/pdf/2610.35189#page=3).
 
 <a id="q1"></a>
 
@@ -10,7 +48,7 @@ Jiawei Qu; Kai Hou; Hongjie Jia; Jinyue Yan. 2026. arXiv:2610.35189, v1 preprint
 
 **Explanation:** It is a proposed way to compare the operational carbon cost of AI services at a defined level of performance. First, models must meet the task's explicit capability requirements. Only eligible models are then compared by expected emissions per successfully completed task. The accounting should include failures, retries and escalation, together with the electricity carbon intensity of deployment. The paper presents this as a Perspective framework that still requires standardized assessments and calibration.
 
-**Source paper:** Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI. Qu et al. (2026), arXiv:2610.35189, v1.
+**Source paper:** Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI. Qu et al. (2026), [arXiv:2610.35189](https://arxiv.org/abs/2610.35189), v1.
 
 **Evidence:** [PDF pp. 1–4, Abstract, Introduction, and Establishing Capability-constrained carbon labels; Figs. 1–2](https://arxiv.org/pdf/2610.35189#page=1).
 
@@ -22,7 +60,7 @@ Jiawei Qu; Kai Hou; Hongjie Jia; Jinyue Yan. 2026. arXiv:2610.35189, v1 preprint
 
 **Explanation:** A single query can consume little energy yet fail to deliver the service the user needs. Repeating the request, generating additional reasoning or escalating to another model adds energy before a successful result is obtained. The paper therefore argues that comparisons should capture the expected carbon cost of delivering a successful task at a specified quality level. Per-token and per-query measurements alone may omit these additional attempts and do not establish equivalent service quality.
 
-**Source paper:** Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI. Qu et al. (2026), arXiv:2610.35189, v1.
+**Source paper:** Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI. Qu et al. (2026), [arXiv:2610.35189](https://arxiv.org/abs/2610.35189), v1.
 
 **Evidence:** [PDF pp. 1–3, Introduction and Establishing Capability-constrained carbon labels](https://arxiv.org/pdf/2610.35189#page=1).
 
@@ -34,7 +72,7 @@ Jiawei Qu; Kai Hou; Hongjie Jia; Jinyue Yan. 2026. arXiv:2610.35189, v1 preprint
 
 **Explanation:** No universal rule of that kind is supported by this paper. A smaller or efficient model may be suitable when it reliably meets the task requirements. If it fails and triggers retries or escalation, the total energy needed for successful completion may rise. Carbon emissions also depend on the electricity supplying inference. The proposed decision rule is to identify eligible models first, then compare expected operational emissions for the task and deployment configuration.
 
-**Source paper:** Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI. Qu et al. (2026), arXiv:2610.35189, v1.
+**Source paper:** Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI. Qu et al. (2026), [arXiv:2610.35189](https://arxiv.org/abs/2610.35189), v1.
 
 **Evidence:** [PDF pp. 1–3, Introduction and Establishing Capability-constrained carbon labels; PDF p. 5, illustrative scenario discussion](https://arxiv.org/pdf/2610.35189#page=1).
 
@@ -46,7 +84,7 @@ Jiawei Qu; Kai Hou; Hongjie Jia; Jinyue Yan. 2026. arXiv:2610.35189, v1 preprint
 
 **Explanation:** S1–S4 illustrate increasing capability levels within a task category, such as coding, writing or mathematical reasoning. A model must meet or exceed the requested level to be eligible. Eligible models are then compared using A–G grades for expected operational emissions per successful task, with A representing the lowest emissions and G the highest. These are illustrative labels: the paper does not establish final standardized performance thresholds or carbon-grade boundaries.
 
-**Source paper:** Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI. Qu et al. (2026), arXiv:2610.35189, v1.
+**Source paper:** Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI. Qu et al. (2026), [arXiv:2610.35189](https://arxiv.org/abs/2610.35189), v1.
 
 **Evidence:** [PDF pp. 3–4, Establishing Capability-constrained carbon labels; Fig. 2 and caption](https://arxiv.org/pdf/2610.35189#page=3).
 
@@ -58,7 +96,7 @@ Jiawei Qu; Kai Hou; Hongjie Jia; Jinyue Yan. 2026. arXiv:2610.35189, v1 preprint
 
 **Explanation:** Under the paper's assumed 2025 conditions, task-matched selection is estimated at 16.9 Mt CO₂ versus 47.0 Mt CO₂ for reconstructed current use, a reported 64.0% reduction. The illustrative 2035 SSP5-8.5 pathway reports 61.6% lower emissions relative to that baseline. These are counterfactual and projected scenario results, not measured deployment savings. Their magnitudes depend on task-demand assumptions, capability assessments, inference-energy inputs and future trajectories, so they should not be treated as guaranteed reductions.
 
-**Source paper:** Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI. Qu et al. (2026), arXiv:2610.35189, v1.
+**Source paper:** Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI. Qu et al. (2026), [arXiv:2610.35189](https://arxiv.org/abs/2610.35189), v1.
 
 **Evidence:** [PDF pp. 4–5, Label-guided model selection and emissions; Fig. 3 and caption](https://arxiv.org/pdf/2610.35189#page=4).
 
@@ -70,7 +108,7 @@ Jiawei Qu; Kai Hou; Hongjie Jia; Jinyue Yan. 2026. arXiv:2610.35189, v1 preprint
 
 **Explanation:** The paper compares reconstructed current use with capability-prioritized, task-matched and energy-efficiency-prioritized selection. Published model-level token-use shares, classified using benchmark scores, serve as a proxy for the distribution of required service levels. The energy-efficiency-prioritized scenario allows up to two attempts before escalation. The authors estimate 2025 counterfactual emissions and explore trajectories to 2035 using IEA-informed growth assumptions and electricity carbon intensities under SSP1-2.6 and SSP5-8.5. This is illustrative scenario analysis, rather than a new live-routing trial.
 
-**Source paper:** Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI. Qu et al. (2026), arXiv:2610.35189, v1.
+**Source paper:** Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI. Qu et al. (2026), [arXiv:2610.35189](https://arxiv.org/abs/2610.35189), v1.
 
 **Evidence:** [PDF pp. 4–5, Fig. 3 caption and Label-guided model selection and emissions](https://arxiv.org/pdf/2610.35189#page=4).
 
@@ -82,7 +120,7 @@ Jiawei Qu; Kai Hou; Hongjie Jia; Jinyue Yan. 2026. arXiv:2610.35189, v1 preprint
 
 **Explanation:** The same amount of task-execution energy can produce different operational emissions when electricity carbon intensity differs across regions or times. The paper therefore proposes combining energy per successful task with serving-region and, where available, time-specific carbon intensity. A label would describe a model–task–deployment configuration and need updates as conditions change. Carbon-aware routing could use this information where latency, privacy and availability constraints allow, rather than assuming a model has one permanent carbon grade.
 
-**Source paper:** Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI. Qu et al. (2026), arXiv:2610.35189, v1.
+**Source paper:** Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI. Qu et al. (2026), [arXiv:2610.35189](https://arxiv.org/abs/2610.35189), v1.
 
 **Evidence:** [PDF p. 2, Introduction; PDF p. 3, Establishing Capability-constrained carbon labels, third principle; PDF p. 6, Conclusion and outlook](https://arxiv.org/pdf/2610.35189#page=2).
 
@@ -94,7 +132,7 @@ Jiawei Qu; Kai Hou; Hongjie Jia; Jinyue Yan. 2026. arXiv:2610.35189, v1 preprint
 
 **Explanation:** The paper proposes a framework and illustrates its implications; it does not report implementation and validation of a complete labeling standard or production routing service. Its capability levels and carbon-grade thresholds require calibration. The outlook calls for shared evaluation protocols, comprehensive energy measurements, transparent deployment-specific carbon accounting and independent verification. The paper can guide the design of future evaluations, but its illustrative labels should not be presented as certified grades for named commercial models.
 
-**Source paper:** Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI. Qu et al. (2026), arXiv:2610.35189, v1.
+**Source paper:** Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI. Qu et al. (2026), [arXiv:2610.35189](https://arxiv.org/abs/2610.35189), v1.
 
 **Evidence:** [Study-scope interpretation based on PDF pp. 1, 4 and 6, Abstract, illustrative label design, and Conclusion and outlook](https://arxiv.org/pdf/2610.35189#page=1).
 
@@ -106,7 +144,7 @@ Jiawei Qu; Kai Hou; Hongjie Jia; Jinyue Yan. 2026. arXiv:2610.35189, v1 preprint
 
 **Explanation:** The proposed comparisons and illustrative results focus on operational emissions associated with inference and successful task completion. The paper discusses translating task-level energy into emissions using the electricity supplying inference. It also states that broader life-cycle impacts should be incorporated as evidence and reporting improve. Accordingly, the reported scenario totals should not be described as a complete life-cycle assessment covering all training, hardware manufacture, infrastructure construction and other upstream or downstream impacts.
 
-**Source paper:** Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI. Qu et al. (2026), arXiv:2610.35189, v1.
+**Source paper:** Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI. Qu et al. (2026), [arXiv:2610.35189](https://arxiv.org/abs/2610.35189), v1.
 
 **Evidence:** [PDF pp. 3–5, operational carbon accounting and scenario results; PDF p. 6, Conclusion and outlook, third implementation priority](https://arxiv.org/pdf/2610.35189#page=3).
 
@@ -118,7 +156,7 @@ Jiawei Qu; Kai Hou; Hongjie Jia; Jinyue Yan. 2026. arXiv:2610.35189, v1 preprint
 
 **Explanation:** No. The authors explicitly note that efficiency gains may stimulate additional demand, so lower emissions per successful task may not reduce aggregate emissions. The proposed labels address the carbon cost of delivering a defined service; total emissions also depend on how much service is consumed. The paper frames capability-constrained labeling as a demand-side complement to cleaner electricity and more efficient computing, not as a standalone guarantee of falling sector-wide emissions.
 
-**Source paper:** Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI. Qu et al. (2026), arXiv:2610.35189, v1.
+**Source paper:** Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI. Qu et al. (2026), [arXiv:2610.35189](https://arxiv.org/abs/2610.35189), v1.
 
 **Evidence:** [PDF p. 6, Conclusion and outlook, final paragraph](https://arxiv.org/pdf/2610.35189#page=6).
 

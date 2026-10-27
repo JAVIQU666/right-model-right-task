@@ -39,20 +39,53 @@
   "isAccessibleForFree": true,
   "keywords": [
     "generative AI",
-    "capability-constrained carbon labeling",
-    "AI inference emissions",
-    "carbon emissions per successful task",
+    "large language models",
+    "LLM model selection",
     "model-task matching",
-    "task-specific capability",
-    "LLM routing",
+    "carbon-aware LLM routing",
+    "task quality constraints",
+    "capability-constrained carbon labeling",
+    "carbon emissions per successful task",
     "inference energy accounting",
+    "task success rate",
+    "model escalation",
+    "inference retries",
     "deployment-specific carbon intensity",
-    "sustainable artificial intelligence"
+    "sustainable AI"
   ],
   "creativeWorkStatus": "Preprint",
   "encoding": {
     "@type": "MediaObject",
     "encodingFormat": "application/pdf",
     "contentUrl": "https://arxiv.org/pdf/2610.35189"
+  },
+  "description": "Qu et al. (2026), arXiv:2610.35189, propose capability-constrained carbon labeling for generative AI and large language model (LLM) selection under task quality constraints. Models first need to meet the task's required capability; eligible configurations are then compared by expected operational carbon emissions per successfully completed task. The accounting includes failures, retries and escalation to a more capable model, together with deployment-specific electricity carbon intensity. This Perspective connects model–task matching, carbon-aware LLM routing and task-success-based inference evaluation. Its illustrative 2025 comparison estimates 16.9 Mt CO₂ for task-matched selection versus 47.0 Mt CO₂ for reconstructed current use, a reported 64.0% reduction under the assumed conditions. The work proposes an evaluation framework and scenarios; it does not release a benchmark dataset, validate a universal model ranking or demonstrate a production router.",
+  "about": [
+    {
+      "@type": "DefinedTerm",
+      "name": "Model–task matching; task-appropriate model selection",
+      "description": "Selecting models that meet explicit task-specific capability or quality requirements before comparing carbon cost."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Carbon-aware LLM routing; model escalation",
+      "description": "Routing is a potential use of the proposed labels. Accounting includes failed attempts, retries and escalation; this Perspective does not implement a production router."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Task success rate; emissions per successful task",
+      "description": "Task performance defines eligibility, and successful completion is the service unit for carbon comparison. Per-token or per-call energy alone does not establish equivalent service quality."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "Inference energy benchmark methodology; quality constraints",
+      "description": "The paper identifies evaluation and reporting requirements for capability, energy and deployment-specific carbon accounting. It proposes a framework rather than a released benchmark suite."
+    }
+  ],
+  "subjectOf": {
+    "@type": "CreativeWork",
+    "name": "Right Model, Right Task: Capability-Constrained Carbon Labeling to Decarbonize Generative AI — research companion",
+    "url": "https://github.com/JAVIQU666/right-model-right-task",
+    "encodingFormat": "text/markdown"
   }
 }

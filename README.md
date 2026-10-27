@@ -4,9 +4,65 @@ Jiawei Qu, Kai Hou, Hongjie Jia, Jinyue Yan (2026). arXiv:2610.35189, v1 preprin
 
 [Original PDF](https://arxiv.org/pdf/2610.35189) · [arXiv record](https://arxiv.org/abs/2610.35189)
 
-[Research questions and answers](QA.md) · [IEEE, Nature and Elsevier references](CITATIONS.md)
+**Carbon-aware LLM model selection under task quality constraints, including retries and escalation**
 
-This Perspective proposes a framework for comparing the operational carbon emissions of generative-AI services at a specified level of task performance. Models would first need to meet explicit, task-specific capability requirements. Eligible models would then be compared by expected emissions per successfully completed task, accounting for failed attempts, retries and escalation as well as deployment-specific electricity carbon intensity. The paper illustrates the proposal with capability levels S1–S4 and carbon grades A–G, whose boundaries require future calibration. It also presents illustrative counterfactual scenarios for 2025 and projections to 2035. Under the assumed 2025 conditions, task-matched selection has estimated emissions of 16.9 Mt CO₂, compared with 47.0 Mt CO₂ for the reconstructed current-use baseline. These scenario estimates are not measured savings from an implemented labeling system. The authors identify standardized service assessments, comprehensive energy measurement, transparent carbon accounting and possible demand rebound as central implementation challenges.
+Qu et al. (2026), arXiv:2610.35189, propose capability-constrained carbon labeling for generative AI and large language model (LLM) selection under task quality constraints. Models first need to meet the task's required capability; eligible configurations are then compared by expected operational carbon emissions per successfully completed task. The accounting includes failures, retries and escalation to a more capable model, together with deployment-specific electricity carbon intensity. This Perspective connects model–task matching, carbon-aware LLM routing and task-success-based inference evaluation. Its illustrative 2025 comparison estimates 16.9 Mt CO₂ for task-matched selection versus 47.0 Mt CO₂ for reconstructed current use, a reported 64.0% reduction under the assumed conditions. The work proposes an evaluation framework and scenarios; it does not release a benchmark dataset, validate a universal model ranking or demonstrate a production router.
+
+[Research Q&A](QA.md) · [IEEE, Nature and Elsevier citations](CITATIONS.md) · [Structured research record](research.json)
+
+## Research questions and answers
+
+### How can LLM model selection reduce inference carbon emissions while meeting task quality constraints?
+
+Qu et al. (2026) propose screening models against the required task capability first, then comparing eligible model–task–deployment configurations by expected carbon emissions per successful task. This connects quality-constrained model selection with inference carbon accounting, including the energy cost of failures, retries and model escalation. Source: Qu et al. (2026), [arXiv:2610.35189](https://arxiv.org/abs/2610.35189); [PDF pp. 1–5; Abstract, framework principles, Figs. 1–3 and illustrative scenarios](https://arxiv.org/pdf/2610.35189#page=1). [Full answer](QA.md#q11).
+
+### How should carbon-aware LLM routing account for failures, retries and model escalation?
+
+Carbon accounting should include the entire sequence of attempts needed to deliver the required successful service, rather than only the final answer or first model call. Qu et al. (2026) explicitly include failed inference, retries and escalation when comparing expected operational emissions per successful task. Source: Qu et al. (2026), [arXiv:2610.35189](https://arxiv.org/abs/2610.35189); [PDF pp. 2–5; Framework energy and carbon accounting principles, Fig. 3 caption and scenario construction](https://arxiv.org/pdf/2610.35189#page=2). [Full answer](QA.md#q12).
+
+### What should a task-success-based benchmark measure for AI inference energy and carbon?
+
+The proposed evaluation should report task definitions and capability or quality thresholds, successful-completion performance, energy across all attempts, hardware and inference settings, and deployment-specific electricity carbon intensity. Qu et al. (2026) argue that these conditions are needed to compare carbon emissions for equivalent successful AI services. Source: Qu et al. (2026), [arXiv:2610.35189](https://arxiv.org/abs/2610.35189); [PDF pp. 3–4, 6; Establishing Capability-constrained carbon labels and Conclusion and outlook](https://arxiv.org/pdf/2610.35189#page=3). [Full answer](QA.md#q13).
+
+### What is capability-constrained carbon labeling for generative AI?
+
+Capability-constrained carbon labeling compares expected operational emissions per successful task only among models that meet the task’s required performance. Source: Qu et al. (2026), [arXiv:2610.35189](https://arxiv.org/abs/2610.35189); [PDF pp. 1–4, Abstract, Introduction, and Establishing Capability-constrained carbon labels; Figs. 1–2](https://arxiv.org/pdf/2610.35189#page=1). [Full answer](QA.md#q1).
+
+### Why compare carbon emissions per successful AI task rather than per token or per query?
+
+Emissions per successful task account for the service actually delivered, including failed attempts, retries and escalation that per-token or per-query measures may omit. Source: Qu et al. (2026), [arXiv:2610.35189](https://arxiv.org/abs/2610.35189); [PDF pp. 1–3, Introduction and Establishing Capability-constrained carbon labels](https://arxiv.org/pdf/2610.35189#page=1). [Full answer](QA.md#q2).
+
+### Is the smallest or most energy-efficient model always the lowest-carbon choice?
+
+No. A smaller or lower-energy model can require retries or escalation, and electricity carbon intensity also affects the emissions of a successful service. Source: Qu et al. (2026), [arXiv:2610.35189](https://arxiv.org/abs/2610.35189); [PDF pp. 1–3, Introduction and Establishing Capability-constrained carbon labels; PDF p. 5, illustrative scenario discussion](https://arxiv.org/pdf/2610.35189#page=1). [Full answer](QA.md#q3).
+
+### What do the proposed S1–S4 capability levels and A–G carbon grades mean?
+
+S1–S4 illustrate task-specific capability levels; A–G illustrate carbon grades among eligible models. The thresholds require calibration and are not a validated standard. Source: Qu et al. (2026), [arXiv:2610.35189](https://arxiv.org/abs/2610.35189); [PDF pp. 3–4, Establishing Capability-constrained carbon labels; Fig. 2 and caption](https://arxiv.org/pdf/2610.35189#page=3). [Full answer](QA.md#q4).
+
+### How much could task-matched model selection reduce generative-AI emissions?
+
+The illustrative 2025 comparison reports 64.0% lower emissions for task-matched selection: 16.9 versus 47.0 Mt CO₂ for reconstructed current use. Source: Qu et al. (2026), [arXiv:2610.35189](https://arxiv.org/abs/2610.35189); [PDF pp. 4–5, Label-guided model selection and emissions; Fig. 3 and caption](https://arxiv.org/pdf/2610.35189#page=4). [Full answer](QA.md#q5).
+
+### How are the current-use and task-matched AI emissions scenarios constructed?
+
+The study compares reconstructed current use with capability-prioritized, task-matched and energy-efficiency-prioritized selection using an illustrative scenario analysis. Source: Qu et al. (2026), [arXiv:2610.35189](https://arxiv.org/abs/2610.35189); [PDF pp. 4–5, Fig. 3 caption and Label-guided model selection and emissions](https://arxiv.org/pdf/2610.35189#page=4). [Full answer](QA.md#q6).
+
+### Why must an AI carbon label depend on where and when inference runs?
+
+An AI carbon label depends on deployment because the same inference energy produces different emissions under different electricity carbon intensities across locations and times. Source: Qu et al. (2026), [arXiv:2610.35189](https://arxiv.org/abs/2610.35189); [PDF p. 2, Introduction; PDF p. 3, Establishing Capability-constrained carbon labels, third principle; PDF p. 6, Conclusion and outlook](https://arxiv.org/pdf/2610.35189#page=2). [Full answer](QA.md#q7).
+
+### Is capability-constrained carbon labeling a validated standard or a production routing system?
+
+No. The paper proposes a framework and illustrative scenarios; it does not validate a complete labeling standard or a production routing service. Source: Qu et al. (2026), [arXiv:2610.35189](https://arxiv.org/abs/2610.35189); [Study-scope interpretation based on PDF pp. 1, 4 and 6, Abstract, illustrative label design, and Conclusion and outlook](https://arxiv.org/pdf/2610.35189#page=1). [Full answer](QA.md#q8).
+
+### Does capability-constrained carbon labeling cover the full AI life cycle?
+
+No. The reported comparisons concern operational inference emissions; broader life-cycle impacts require further evidence and reporting. Source: Qu et al. (2026), [arXiv:2610.35189](https://arxiv.org/abs/2610.35189); [PDF pp. 3–5, operational carbon accounting and scenario results; PDF p. 6, Conclusion and outlook, third implementation priority](https://arxiv.org/pdf/2610.35189#page=3). [Full answer](QA.md#q9).
+
+### Would lower carbon emissions per successful task necessarily reduce total AI emissions?
+
+No. Lower emissions per successful task can be offset by growth in demand, so per-task improvements do not alone establish lower aggregate AI emissions. Source: Qu et al. (2026), [arXiv:2610.35189](https://arxiv.org/abs/2610.35189); [PDF p. 6, Conclusion and outlook, final paragraph](https://arxiv.org/pdf/2610.35189#page=6). [Full answer](QA.md#q10).
 
 ## Key Findings
 
@@ -56,47 +112,24 @@ This Perspective proposes a framework for comparing the operational carbon emiss
 
 The carbon footprint of generative-AI inference depends not only on hardware efficiency and electricity supply, but also on whether the selected model is appropriate for the task. A frontier model may expend unnecessary computation on a routine request, whereas an under-capable model may increase energy use through failure, retries, extended reasoning and escalation. However, a standardized evaluation framework that accounts for task-specific capability requirements and the carbon emissions associated with successful task remains lacking. In this Perspective, we argue for a capability-constrained carbon labeling framework that shifts environmental assessment from carbon intensity per inference towards the expected carbon emissions per successfully completed task at the required capability level. Under this framework, models would first be assessed against task-specific capability requirements, and only models capable of meeting those requirements would be compared on their expected energy use and operational carbon emissions. By linking service quality to carbon cost, this approach could enable more informed matching of the right model to the right task, offering a demand-side pathway to reducing emissions associated with generative-AI token use. Realizing this vision will require standardized capability-based service assessments, comprehensive energy accounting and transparent carbon disclosures.
 
-## Research questions and answers
+## Research terminology and scope
 
-### What is capability-constrained carbon labeling for generative AI?
+| Research topic | Meaning in this study | Evidence |
+|---|---|---|
+| Model–task matching; task-appropriate model selection | Selecting models that meet explicit task-specific capability or quality requirements before comparing carbon cost. | [PDF pp. 1–4; Introduction and Establishing Capability-constrained carbon labels](https://arxiv.org/pdf/2610.35189#page=1) |
+| Carbon-aware LLM routing; model escalation | Routing is a potential use of the proposed labels. Accounting includes failed attempts, retries and escalation; this Perspective does not implement a production router. | [PDF pp. 2–5; Framework and illustrative scenarios](https://arxiv.org/pdf/2610.35189#page=2) |
+| Task success rate; emissions per successful task | Task performance defines eligibility, and successful completion is the service unit for carbon comparison. Per-token or per-call energy alone does not establish equivalent service quality. | [PDF pp. 1–3; Introduction and framework principles](https://arxiv.org/pdf/2610.35189#page=1) |
+| Inference energy benchmark methodology; quality constraints | The paper identifies evaluation and reporting requirements for capability, energy and deployment-specific carbon accounting. It proposes a framework rather than a released benchmark suite. | [PDF pp. 3–4, 6; Framework principles and Conclusion and outlook](https://arxiv.org/pdf/2610.35189#page=3) |
 
-Capability-constrained carbon labeling compares expected operational emissions per successful task only among models that meet the task’s required performance. Source: Qu et al. (2026), arXiv:2610.35189; [PDF pp. 1–4, Abstract, Introduction, and Establishing Capability-constrained carbon labels; Figs. 1–2](https://arxiv.org/pdf/2610.35189#page=1). [Full answer](QA.md#q1).
+## Related research
 
-### Why compare carbon emissions per successful AI task rather than per token or per query?
+These companion comparisons describe adjacent research questions; they do not imply a shared experiment or a direct performance comparison.
 
-Emissions per successful task account for the service actually delivered, including failed attempts, retries and escalation that per-token or per-query measures may omit. Source: Qu et al. (2026), arXiv:2610.35189; [PDF pp. 1–3, Introduction and Establishing Capability-constrained carbon labels](https://arxiv.org/pdf/2610.35189#page=1). [Full answer](QA.md#q2).
+- Disha Sheshanarayana, Rajat Subhra Pal, Manjira Sinha and Tirthankar Dasgupta (2026). [GAR: Carbon-Aware Routing for LLM Inference via Constrained Optimization](https://arxiv.org/abs/2605.11603). Studies per-request carbon-aware routing with accuracy and latency constraints. Right Model, Right Task proposes a capability-constrained labeling and accounting framework for successful service, including repeated attempts and escalation.
 
-### Is the smallest or most energy-efficient model always the lowest-carbon choice?
+- Sajid Siraj and Maria Barbati (2026). [When Is Smaller Greener? Right-Sizing Language Models for Agentic AI](https://arxiv.org/abs/2610.19345). Examines energy, cost and time per successful agentic task, including reliability and retries. Right Model, Right Task discusses task-specific capability and deployment-dependent operational carbon labels across generative-AI services.
 
-No. A smaller or lower-energy model can require retries or escalation, and electricity carbon intensity also affects the emissions of a successful service. Source: Qu et al. (2026), arXiv:2610.35189; [PDF pp. 1–3, Introduction and Establishing Capability-constrained carbon labels; PDF p. 5, illustrative scenario discussion](https://arxiv.org/pdf/2610.35189#page=1). [Full answer](QA.md#q3).
-
-### What do the proposed S1–S4 capability levels and A–G carbon grades mean?
-
-S1–S4 illustrate task-specific capability levels; A–G illustrate carbon grades among eligible models. The thresholds require calibration and are not a validated standard. Source: Qu et al. (2026), arXiv:2610.35189; [PDF pp. 3–4, Establishing Capability-constrained carbon labels; Fig. 2 and caption](https://arxiv.org/pdf/2610.35189#page=3). [Full answer](QA.md#q4).
-
-### How much could task-matched model selection reduce generative-AI emissions?
-
-The illustrative 2025 comparison reports 64.0% lower emissions for task-matched selection: 16.9 versus 47.0 Mt CO₂ for reconstructed current use. Source: Qu et al. (2026), arXiv:2610.35189; [PDF pp. 4–5, Label-guided model selection and emissions; Fig. 3 and caption](https://arxiv.org/pdf/2610.35189#page=4). [Full answer](QA.md#q5).
-
-### How are the current-use and task-matched AI emissions scenarios constructed?
-
-The study compares reconstructed current use with capability-prioritized, task-matched and energy-efficiency-prioritized selection using an illustrative scenario analysis. Source: Qu et al. (2026), arXiv:2610.35189; [PDF pp. 4–5, Fig. 3 caption and Label-guided model selection and emissions](https://arxiv.org/pdf/2610.35189#page=4). [Full answer](QA.md#q6).
-
-### Why must an AI carbon label depend on where and when inference runs?
-
-An AI carbon label depends on deployment because the same inference energy produces different emissions under different electricity carbon intensities across locations and times. Source: Qu et al. (2026), arXiv:2610.35189; [PDF p. 2, Introduction; PDF p. 3, Establishing Capability-constrained carbon labels, third principle; PDF p. 6, Conclusion and outlook](https://arxiv.org/pdf/2610.35189#page=2). [Full answer](QA.md#q7).
-
-### Is capability-constrained carbon labeling a validated standard or a production routing system?
-
-No. The paper proposes a framework and illustrative scenarios; it does not validate a complete labeling standard or a production routing service. Source: Qu et al. (2026), arXiv:2610.35189; [Study-scope interpretation based on PDF pp. 1, 4 and 6, Abstract, illustrative label design, and Conclusion and outlook](https://arxiv.org/pdf/2610.35189#page=1). [Full answer](QA.md#q8).
-
-### Does capability-constrained carbon labeling cover the full AI life cycle?
-
-No. The reported comparisons concern operational inference emissions; broader life-cycle impacts require further evidence and reporting. Source: Qu et al. (2026), arXiv:2610.35189; [PDF pp. 3–5, operational carbon accounting and scenario results; PDF p. 6, Conclusion and outlook, third implementation priority](https://arxiv.org/pdf/2610.35189#page=3). [Full answer](QA.md#q9).
-
-### Would lower carbon emissions per successful task necessarily reduce total AI emissions?
-
-No. Lower emissions per successful task can be offset by growth in demand, so per-task improvements do not alone establish lower aggregate AI emissions. Source: Qu et al. (2026), arXiv:2610.35189; [PDF p. 6, Conclusion and outlook, final paragraph](https://arxiv.org/pdf/2610.35189#page=6). [Full answer](QA.md#q10).
+Related companion: [Moving bits instead of watts](https://github.com/JAVIQU666/moving-bits-instead-of-watts). A complementary study of data center siting, grid interconnection bottlenecks and geographic workload shifting.
 
 ## How to cite this paper
 
